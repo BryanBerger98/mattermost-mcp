@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "mattermost": {
+      "command": "node",
+      "args": ["/absolute/path/to/mattermost-mcp/dist/index.js"],
+      "env": {
+        "MM_URL": "https://mattermost.example.com",
+        "MM_AUTH_MODE": "pat",
+        "MM_TOKEN": "your-personal-access-token"
+      }
+    }
+  }
+}

@@ -1,0 +1,18 @@
+# Disposable Mattermost for integration tests.
+#
+#   docker compose up -d        # boots mattermost-preview on http://localhost:8065
+#
+# First boot: open http://localhost:8065, create an account + a team, then
+# generate a Personal Access Token (System Console > Integrations > Personal
+# Access Tokens, after enabling them). Then run the live tests:
+#
+#   MM_INTEGRATION=1 MM_URL=http://localhost:8065 MM_AUTH_MODE=pat MM_TOKEN=<token> \
+#     MM_TEST_CHANNEL_ID=<channel-id> npm run test:integration
+#
+# Tear down with: docker compose down -v
+services:
+  mattermost:
+    image: mattermost/mattermost-preview:latest
+    container_name: mattermost-mcp-preview
+    ports:
+      - "8065:8065"
